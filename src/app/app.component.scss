@@ -3,23 +3,17 @@
 }
 
 .page-layout {
-  // ALTERADO: O padding agora controla as margens da página
   padding: 2rem;
   min-height: 100vh;
   box-sizing: border-box;
-  // REMOVIDO: Não vamos mais centralizar o container filho
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
 }
 
 .page-header {
   text-align: center;
-  // ALTERADO: Reduzimos a margem inferior pois agora há mais espaçamento geral
   margin-bottom: 1.5rem;
 
   h1 {
-    font-size: 2.5rem; // Levemente menor para se ajustar ao novo layout
+    font-size: 2.5rem;
     font-weight: 600;
     color: #2c3e50;
     margin: 0;
@@ -33,16 +27,12 @@
 }
 
 .content-panel {
-  width: 100%; // O painel ocupa toda a largura do seu container pai (page-layout)
-  // REMOVIDO: Não há mais largura máxima
-  // max-width: 900px;
-  min-height: calc(100vh - 4rem); // Ocupa a altura da tela menos o padding do pai
+  width: 100%; 
+  min-height: calc(100vh - 4rem);
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-
-  // Adicionamos um flexbox aqui para controlar o layout interno
   display: flex;
   flex-direction: column;
 }
@@ -54,6 +44,5 @@
 
 .chat-section {
   padding: 0;
-  // O chat vai crescer para preencher o espaço vertical restante
   flex-grow: 1;
 }
