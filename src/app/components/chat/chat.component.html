@@ -1,0 +1,26 @@
+<p-card>
+  <ng-template pTemplate="content">
+    <div class="message-container" #scrollMe>
+      <div *ngFor="let msg of messages" class="message-row" [ngClass]="{'user-row': msg.sender === 'Você', 'bot-row': msg.sender === 'Bot'}">
+        <div class="message-bubble">
+          <strong class="sender-name">{{ msg.sender }}</strong>
+          <span class="message-text">{{ msg.text }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <div class="chat-input-container">
+      <textarea
+        pInputTextarea
+        [autoResize]="true"
+        rows="1"
+        [(ngModel)]="userInput"
+        (keydown.enter)="sendMessage(); $event.preventDefault()"
+        placeholder="Digite sua mensagem...">
+      </textarea>
+      <button pButton pRipple type="button" icon="pi pi-send" class="p-button-rounded p-button-info" (click)="sendMessage()"></button>
+    </div>
+  </ng-template>
+</p-card>
